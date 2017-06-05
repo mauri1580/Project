@@ -1,0 +1,35 @@
+<section id="sidebar" toolbar></section>
+<md-card class="login-form" flex="flex" flex-gt-sm="50" flex-gt-md="33" >
+    <div layout="row" layout-align="center center" >
+        <img src="assets/images/BloodHp1.png" style="width: 150px">
+    </div>
+
+    <md-card-content>
+        <form name="loginForm">
+            <md-input-container class="md-block">
+                <label>Email</label>
+                <input type="text" name="email" ng-model="login.formData.email" placeholder="email" required/>
+                <div ng-messages="loginForm.email.$error" role="alert" multiple="">
+                    <div ng-message="required" class="my-message">Please enter your email.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Password</label>
+                <input type="password" name="password" ng-model="login.formData.password" placeholder="password" required md-maxlength="60"/>
+                <div ng-messages="loginForm.password.$error" role="alert" multiple="">
+                    <div ng-message="required" class="my-message">Please enter your password.</div>
+                </div>
+
+            </md-input-container>
+            <div layout="row" layout-align="center center">
+                <md-button ng-disabled="!loginForm.$valid" ng-click="login.submit()" class="md-raised md-primary"
+                           layout="row" layout-align="center center" >&nbsp Login &nbsp</md-button>
+            </div>
+
+            <div ng-if="login.invalid" layout="row" layout-align="center center">
+                <div ng-message="required" class="my-message">Invalid email or password</div>
+            </div>
+
+        </form>
+    </md-card-content>
+</md-card>

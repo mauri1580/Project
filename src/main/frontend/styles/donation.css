@@ -1,0 +1,35 @@
+.donation-card {
+    position: absolute;
+    max-width: 960px;
+    padding: 75px;
+    margin-left: 900px;
+    margin-top: 300px;
+}
+
+.donation-card-add {
+    position: absolute;
+    max-width: 960px;
+    padding: 75px;
+    margin-left: 600px;
+    margin-top: 20px;
+}
+
+.donation-card-search {
+    position: absolute;
+    max-width: 960px;
+    padding: 75px;
+    margin-left: 725px;
+    margin-top: 150px;
+}
+
+.donation-card-notify {
+    position: absolute;
+    max-width: 960px;
+    padding: 75px;
+    margin-left: 900px;
+    margin-top: 300px;
+}
+
+.donation-card > md-input-container {
+    margin: 10px;
+}

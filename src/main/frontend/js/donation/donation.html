@@ -1,0 +1,170 @@
+<section id="sidebar" toolbar authorities="donation.user.authorities"></section>
+<md-card ng-class="donation.currentClass" flex="flex" flex-gt-sm="50" flex-gt-md="33" >
+    <div layout="column" layout-align="center center">
+        <md-button ng-click="donation.startAdd()" ng-if="donation.active != true" class="md-raised md-primary"
+                   layout="row" layout-align="center center" >&nbsp Add &nbsp</md-button>
+        <md-button ng-click="donation.startSearch()" ng-if="donation.active != true" class="md-raised md-primary"
+                   layout="row" layout-align="center center" >&nbsp Search &nbsp</md-button>
+        <md-button ng-click="donation.startNotify()" ng-if="donation.active != true" class="md-raised md-primary"
+                   layout="row" layout-align="center center" >&nbsp Notify &nbsp</md-button>
+
+        <div ng-if="donation.add === true">
+            <p>Add new donor</p>
+
+            <div layout="row" layout-align="center center">
+                <form name="donorForm" >
+                    <div layout="row" layout-align="center center">
+                        <md-input-container class="md-block">
+                        <label>First Name</label>
+                        <input type="text" name="firstName" ng-model="donation.formData.firstName" placeholder="First name" required/>
+                        <div ng-messages="donationForm.firstName.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter first name.</div>
+                        </div>
+                    </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Middle Initial</label>
+                            <input type="text" name="middleInitial" ng-model="donation.formData.middleInitial" placeholder="Middle Initial"/>
+                            <div ng-messages="donationForm.middleInitial.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Please enter middle initial.</div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Last Name</label>
+                            <input type="text" name="lastName" ng-model="donation.formData.lastName" placeholder="Last name" required/>
+                            <div ng-messages="donationForm.lastName.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Please enter last name.</div>
+                            </div>
+                        </md-input-container>
+
+                    </div>
+
+                    <md-input-container class="md-block">
+                        <label>Date of Birth</label>
+                        <input type="date" name="dateOfBirth" ng-model="donation.dateOfBirth" required/>
+                        <div ng-messages="donationForm.dateOfBirth.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter date of birth.</div>
+                        </div>
+                    </md-input-container>
+
+                    <div layout="row" layout-align="center center">
+
+                        <md-input-container class="md-block">
+                            <label>Email</label>
+                            <input type="text" name="email" ng-model="donation.formData.email" placeholder="Email" required/>
+                            <div ng-messages="donationForm.email.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Please enter email.</div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Phone Number</label>
+                            <input type="text" name="phoneNumber" ng-model="donation.formData.phoneNumber" placeholder="Phone number" required/>
+                            <div ng-messages="donationForm.phoneNumber.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Please enter phone number.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+
+                    <div layout="row" layout-align="center center"> <md-input-container class="md-block">
+                        <label>Street</label>
+                        <input type="text" name="Street" ng-model="donation.formData.address.street" placeholder="Street" required/>
+                        <div ng-messages="donationForm.street.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter street.</div>
+                        </div>
+                    </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>City</label>
+                            <input type="text" name="City" ng-model="donation.formData.address.city" placeholder="City" required/>
+                            <div ng-messages="donationForm.city.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Please enter city.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+
+                    <div layout="row" layout-align="center center">
+                        <md-input-container class="md-block">
+                            <label>State</label>
+                            <input type="text" name="state" ng-model="donation.formData.address.state" placeholder="State" required/>
+                            <div ng-messages="donationForm.state.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Please enter state.</div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Zip Code</label>
+                            <input type="text" name="zipcode" ng-model="donation.formData.address.zipcode" placeholder="Zipcode" required/>
+                            <div ng-messages="donationForm.zipcode.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Please enter zipcode.</div>
+                            </div>
+                        </md-input-container>
+
+                    </div>
+
+                    <div layout="row" layout-align="center center">
+                        <md-button ng-click="donation.submitNewDonor()" class="md-raised md-primary"
+                                   layout="row" layout-align="center center" >&nbsp Submit &nbsp</md-button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+        <div ng-if="donation.search === true">
+            <div ng-if="!donation.hasSearchResult">
+                <p>Search for existing donor</p>
+                <form name="searchForm" >
+                    <div layout="row" layout-align="center center">
+                        <md-input-container class="md-block">
+                            <label>First Name</label>
+                            <input type="text" ng-model="donation.formData.firstName" placeholder="First name" required/>
+                            <div ng-messages="searchForm.firstName.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Please enter first name.</div>
+                            </div>
+                        </md-input-container>
+                        {{donation.search.formData.firstName}}
+                        <md-input-container class="md-block">
+                            <label>Last Name</label>
+                            <input type="text" ng-model="donation.formData.lastName" placeholder="Last name" required/>
+                            <div ng-messages="searchForm.lastName.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Please enter last name.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+
+                    <div layout="row" layout-align="center center">
+                        <md-button ng-click="donation.searchDonors()" class="md-raised md-primary"
+                                   layout="row" layout-align="center center" >&nbsp Search &nbsp</md-button>
+                    </div>
+                </form>
+            </div>
+
+            <div ng-if="donation.hasSearchResult">
+                <ul>
+                    <li ng-repeat="donor in donation.searchResults">
+                        {{donor.firstName}} {{donor.lastName}} {{donor.dateOfBirth}}
+                        <md-button class="md-raised md-primary"
+                                   ng-disabled="(donor.eligibility !== null && !donor.eligibility) || !donor.canDonateAgain"
+                                   ng-click="donation.submitDonation(donor.id)">
+                            &nbsp Add Donation &nbsp
+                        </md-button>
+                    </li>
+                </ul>
+
+                <div layout="row" layout-align="center center">
+                    <md-button ng-click="donation.startSearch()" class="md-raised md-primary"
+                               layout="row" layout-align="center center" >&nbsp Search again &nbsp</md-button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <md-button ng-click="donation.reset()" ng-if="donation.active === true" class="md-raised md-primary"
+                   layout="row" layout-align="center center" >&nbsp Back &nbsp</md-button>
+    </div>
+</md-card>
+

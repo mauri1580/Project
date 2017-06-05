@@ -1,0 +1,23 @@
+<section id="sidebar" toolbar authorities="test.user.authorities"></section>
+<md-card class="donation-card-add" flex="flex" flex-gt-sm="50" flex-gt-md="33" >
+    <div layout="column" layout-align="center center">
+
+        <ul>
+            <li ng-repeat="test in test.neededTests">
+                 Donation ID # {{test.donation.id}} Type: {{test.type.name}}
+                <md-button class="md-raised md-primary" ng-click="test.update(test.id, true)">
+                    &nbsp Pass &nbsp
+                </md-button>
+                <md-button class="md-raised md-primary" ng-click="test.update(test.id, false)">
+                    &nbsp Fail &nbsp
+                </md-button>
+            </li>
+        </ul>
+
+        <div layout="row" layout-align="center center">
+            <md-button ng-click="test.getNullTests()" class="md-raised md-primary"
+                       layout="row" layout-align="center center" >&nbsp Search again &nbsp</md-button>
+        </div>
+    </div>
+</md-card>
+

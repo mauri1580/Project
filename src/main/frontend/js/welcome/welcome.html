@@ -1,0 +1,16 @@
+<section id="sidebar" toolbar></section>
+<div class="center-container" layout="column" layout-align="space-around stretch">
+  <div flex class="feature-focus">
+    <div class="center-absolute feature-img-container" ng-repeat="feature in welcome.visibleFeature">
+      <div class="feature-img" ng-style="{'background-image': 'url({{feature.image}})', 'background-size': '{{feature['image-coverage']}}'}"></div>
+    </div>
+    <div class="center-absolute feature-selector" layout="row" layout-align="center center">
+      <div class="circle" ng-repeat="i in welcome.features" ng-class="{'visible' : welcome.visibleFeatureIndex === $index}"
+           ng-click="welcome.setVisibleIndex($index)"></div>
+    </div>
+    <div class="center-absolute feature-text md-display-1" ng-repeat="feature in welcome.visibleFeature">
+      {{feature.title}}
+      <h1 class="md-subhead">{{feature.body}}</h1>
+    </div>
+  </div>
+</div>

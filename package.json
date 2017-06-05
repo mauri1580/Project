@@ -1,0 +1,41 @@
+{
+  "name": "BDMS",
+  "author": "Team 1",
+  "description": "Blood donation management system written for CSI410",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "webpack-dev-server --config webpack/webpack.config.dev.js --progress --inline --hot",
+    "build": "webpack --config webpack/webpack.config.prod.js --progress --colors -p --display-error-details",
+    "clean": "del-cli src/main/resources/public"
+  },
+  "private": true,
+  "devDependencies": {
+    "angular-mocks": "~1.5.11",
+    "babel-core": "~6.22.1",
+    "babel-loader": "~6.2.10",
+    "babel-preset-es2015": "~6.22.0",
+    "copy-webpack-plugin": "~4.0.1",
+    "css-loader": "~0.26.1",
+    "del-cli": "~0.2.1",
+    "file-loader": "~0.10.0",
+    "html-minifier": "~3.3.0",
+    "html-minifier-loader": "~1.3.4",
+    "html-webpack-harddisk-plugin": "0.0.2",
+    "html-webpack-plugin": "~2.28.0",
+    "ng-annotate-loader": "~0.2.0",
+    "raw-loader": "~0.5.1",
+    "style-loader": "~0.13.1",
+    "url-loader": "~0.5.7",
+    "webpack": "~2.2.1",
+    "webpack-dev-server": "~2.3.0",
+    "webpack-merge": "~2.6.1"
+  },
+  "dependencies": {
+    "angular": "~1.5.11",
+    "angular-animate": "~1.5.11",
+    "angular-aria": "~1.5.10",
+    "angular-material": "~1.1.3",
+    "angular-messages": "~1.5.11",
+    "angular-ui-router": "~0.4.2"
+  }
+}

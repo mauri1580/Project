@@ -1,0 +1,41 @@
+# Properties
+
+# Security info for basic user
+security:
+  user:
+    name: user
+    password: password
+
+# Properties for database
+spring:
+  datasource:
+#    url: jdbc:h2:mem:mydb
+#    username: user
+#    password: password
+#    driver-class-name: org.h2.Driver
+#    initialize: true
+
+    url: jdbc:mysql://localhost:3306/bb
+    username: team1
+    password: team1
+    driver-class-name: com.mysql.jdbc.Driver
+    initialize: true
+
+  jpa:
+    properties:
+      jadira:
+        usertype:
+          autoRegisterUserTypes: true
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+
+flyway:
+  enabled: false
+
+# Actuator settings
+management:
+  context-path: /management

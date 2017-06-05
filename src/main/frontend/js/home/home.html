@@ -1,0 +1,15 @@
+<section id="sidebar" toolbar authorities="home.user.authorities"></section>
+<md-card class="home-card" flex="flex" flex-gt-sm="50" flex-gt-md="33" >
+    <div>
+        <p>Welcome to BDMS, {{home.user.firstName}} {{home.user.lastName}}!</p>
+
+        <p>You are currently logged in as an employee with the following privileges:</p>
+
+        <ul>
+           <li ng-repeat="authority in home.user.authorities" ng-if="authority.name != null">
+               {{authority.name}} : {{authority.description}}
+           </li>
+        </ul>
+    </div>
+</md-card>
+

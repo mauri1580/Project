@@ -1,0 +1,75 @@
+.center-absolute {
+    position: absolute;
+    margin-right: auto;
+    margin-left: auto;
+    right: 0;
+    left: -20px;
+}
+
+.feature-focus {
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-img-container {
+    height: 50%;
+    width: 85%;
+
+    -webkit-transition:all 1.0s ease-in-out;
+    -moz-transition:all 1.0s ease-in-out;
+    -o-transition:all 1.0s ease-in-out;
+    transition:all 1.0s ease-in-out;
+}
+
+.feature-img-container.ng-enter {
+    transform: translate(1000px, 0px);
+}
+
+.feature-img-container.ng-enter.ng-enter-active {
+    transform: translate(0px, 0px);
+}
+
+.feature-img-container.ng-leave {
+    transform: translate(0px, 0px);
+}
+
+.feature-img-container.ng-leave.ng-leave-active {
+    transform: translate(-1000px, 0px);
+}
+
+.feature-img {
+    border-radius: 16px;
+
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.feature-selector {
+    height: 16px;
+    padding: 32px;
+    top: 60%;
+}
+
+.circle {
+    width: 16px;
+    height: 16px;
+    /*background-color: #CCCCCC;*/
+    border: 3px solid #CCCCCC;
+    margin: 24px;
+
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+.visible {
+    background-color: #CCCCCC;
+}
+
+.feature-text {
+    position: absolute;
+    top: 70%;
+    padding: 32px;
+}

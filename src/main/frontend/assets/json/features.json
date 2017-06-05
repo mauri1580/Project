@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Blood Donation Management System",
+    "body": "Welcome to the world's best blood donation management system!",
+    "image": "assets/images/blooddonation.jpg",
+    "image-coverage": "cover"
+  },
+  {
+    "title": "Collect all pertinent information in the field",
+    "body": "Make sure your employees drawing the blood can access and update info on donors",
+    "image": "assets/images/blood-donation-illustration-750.jpg",
+    "image-coverage": "100%"
+  },
+  {
+    "title": "Allow for test tracking",
+    "body": "Your test technicians will easily to store the results of their tests.",
+    "image": "assets/images/blooddonation.jpg",
+    "image-coverage": "cover"
+  },
+  {
+    "title": "Keep track of requests",
+    "body": "Give your partner health centers an easy interface to request blood.",
+    "image": "assets/images/blood-donation-illustration-750.jpg",
+    "image-coverage": "100%"
+  }
+]

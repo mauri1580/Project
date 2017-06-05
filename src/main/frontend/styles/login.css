@@ -1,0 +1,24 @@
+.login-form {
+    position: absolute;
+    max-width: 960px;
+    padding: 48px;
+    margin-left: 775px;
+    margin-top: 100px;
+}
+
+.login-form > md-card {
+    padding: 0 !important;
+}
+
+.login-form > label {
+    margin-top: 20px;
+}
+
+.login-form > md-toolbar, md-input-container, img, .my-message {
+    margin-bottom: 25px;
+    margin-top: 15px;
+}
+
+.login-form > md-button {
+    width: 80%;
+}

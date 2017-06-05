@@ -1,0 +1,17 @@
+
+<div class="inner">
+    <img src="assets/images/MBDMS.jpg" alt="Mountain View" style="float: left; width:260px;height:228px;">
+    <nav>
+        <ul>
+            <li ng-if="toolbar.authorities == null"><a href="/">Welcome</a></li>
+            <li ng-if="toolbar.authorities == null"><a href="/#/login">Login</a></li>
+            <li ng-if="toolbar.authorities != null"><a href="/#/home">Home</a></li>
+            <li ng-repeat="authority in toolbar.authorities"
+                ng-if="authority.name != null && authority.name !== 'ADMIN'">
+                <a ng-href="/#/{{authority.name | lowercase}}">{{authority.name}}</a>
+            </li>
+            <li ng-if="toolbar.authorities != null"><a ng-click="toolbar.logout()">Logout</a></li>
+
+        </ul>
+    </nav>
+</div>
